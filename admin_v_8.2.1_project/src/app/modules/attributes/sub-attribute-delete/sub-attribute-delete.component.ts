@@ -28,7 +28,7 @@ export class SubAttributeDeleteComponent {
     this.isLoading = this.attributeService.isLoading$;
   }
   delete(): void{
-;    this.attributeService.deletePropertie(this.propertie.propertie_id).subscribe((resp:any) => {
+;    this.attributeService.deletePropertie(this.propertie.id).subscribe((resp:any) => {
         this.PropertieD.emit({message: 200});
         this.toastr.success('Atributo eliminada correctamente');
         this.modal.close();

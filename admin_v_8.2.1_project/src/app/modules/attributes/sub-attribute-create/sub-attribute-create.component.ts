@@ -68,7 +68,7 @@ export class SubAttributeCreateComponent {
 
   delete(propertie:any){
     const modalRef = this.modalService.open(SubAttributeDeleteComponent, {centered:true, size:'md'});
-    modalRef.componentInstance.attribute = propertie;
+    modalRef.componentInstance.propertie = propertie;
 
     modalRef.componentInstance.PropertieD.subscribe((resp:any) =>{
       let INDEX = this.properties.findIndex((item:any) => item.id == propertie.id);

@@ -89,6 +89,10 @@ class AttributeProductController extends Controller
 
     public function destroy_propertie($id){
         $propertie = Propertie::findOrFail($id);
+        if($propertie->specifications->count() > 0 || 
+        $propertie->variations->count() > 0){
+            return response()->json(["message" => 403, "message_text" => "El atributo ya esta relacionado con algunos o un producto"]);
+        }
         $propertie->delete();
 
         return response()->json([
